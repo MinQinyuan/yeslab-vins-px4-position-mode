@@ -1,0 +1,79 @@
+%YAML:1.0
+
+# DSH-071 生成：YESLab-Gazebo-VINS-PX4 专用配置（Gazebo 仿真）
+# 禁止修改 euroc / simulation 配置；本文件为新增
+# 内参来源：DSH-070 camera_info 实测（fx=fy=238.3515418, cx=cy=200.5, 400x400, 畸变全 0）
+# 基线来源：右目 P[3] = -16.68460792604968 ⇒ 16.6846/238.3515 = 0.0700 m
+#          在 VINS 中以 body_T_cam0 / body_T_cam1 的平移差体现（本配置未使用独立 baseline 字段）
+# 相机-IMU 外参：由 Gazebo 模型几何推导（IMU 在 base_link 原点；双目在机身 +X 0.1m、横向 ±0.035m；光轴沿机身 +X）
+
+#common parameters
+#support: 1 imu 1 cam; 1 imu 2 cam: 2 cam;
+imu: 1
+num_of_cam: 2
+
+imu_topic: "/imu0"
+image0_topic: "/stereo/left/image_raw"
+image1_topic: "/stereo/right/image_raw"
+output_path: "/home/min/yeslab_build/_downloads/logs/vins_output/"
+
+cam0_calib: "gazebo_cam0_pinhole.yaml"
+cam1_calib: "gazebo_cam1_pinhole.yaml"
+image_width: 400
+image_height: 400
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 0   # 0 trust the following body_T_cam0/1
+
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [
+          0.0, 0.0, 1.0, 0.2,
+          -1.0, 0.0, 0.0, 0.035,
+          0.0, -1.0, 0.0, 0.035,
+          0.0, 0.0, 0.0, 1.0]
+
+body_T_cam1: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [
+          0.0, 0.0, 1.0, 0.2,
+          -1.0, 0.0, 0.0, -0.035,
+          0.0, -1.0, 0.0, 0.035,
+          0.0, 0.0, 0.0, 1.0]
+
+#Multiple thread support
+multiple_thread: 1
+
+#feature traker paprameters
+max_cnt: 150
+min_dist: 30
+freq: 20
+F_threshold: 1.0
+show_track: 1
+flow_back: 1
+
+#optimization parameters
+max_solver_time: 0.04
+max_num_iterations: 8
+keyframe_parallax: 10.0
+
+#imu parameters
+acc_n: 1.7e-2
+gyr_n: 2.0e-4
+acc_w: 1.0e-3
+gyr_w: 1.0e-5
+g_norm: 9.8066
+
+#unsynchronization parameters
+estimate_td: 0
+td: 0.0
+
+#loop closure parameters
+load_previous_pose_graph: 0
+pose_graph_save_path: "/home/min/yeslab_build/_downloads/logs/vins_output/pose_graph/"
+save_image: 0
+visualize_imu_forward: 1

@@ -1,0 +1,71 @@
+﻿演示视频（视频/demo_link.txt）
+
+视频文件：视频/demo.mp4（主交付物：H.264 / yuv420p / 4 fps / 720×440 / 约 115 秒）
+同内容备用：视频/demo.webp（动画图，约 3.3 MB）、视频/demo.gif（兜底，约 3.7 MB）
+（若因仓库大小限制无法直接提交，请把外链地址写在下方「视频链接」处）
+
+视频需连续证明以下 10 点（任务书第八节 / 第十一节）：
+
+  1. Gazebo 与仿真无人机正常运行
+  2. Camera Topic 与 IMU Topic 正常输出        （/stereo/left/image_raw 20 Hz、/imu0 125 Hz）
+  3. VINS-Fusion 正常运行                      （/vins_estimator/odometry 10 Hz）
+  4. RViz 中存在连续 VINS 轨迹
+  5. PX4 已接收到外部视觉定位                  （/mavros/vision_pose/pose 10 Hz）
+  6. PX4 Local Position 有效                   （/mavros/local_position/pose 30.303 Hz）
+  7. GPS 未参与位置估计                        （EKF2_AID_MASK=8 只开外部视觉位）
+  8. 成功进入 Position（POSCTL）模式
+  9. 无人机能够悬停不少于 30 秒                （DSH-108 实测 30.0 s；DSH-111b 复核 30.0 s，dz 跨度仅 0.013 m）
+ 10. 无人机能够前后左右移动，并在停止输入后保持位置
+
+────────────────────────────────────────────
+当前状态：✅ 已产出（2026-10-16 交付，取代原「⬜ 待录制（DSH-111，2026-10-16 复核）」）
+  主交付物 视频/demo.mp4，另有同内容 视频/demo.webp、视频/demo.gif，见下方「交付记录」。
+
+进度：
+  - 第 1~9 点：✅ 已用实飞数据证明（DSH-108 悬停 30.0 s；DSH-111b 在 GUI 下复飞
+    RESULT: COMPLETED，LOITER 30.0 s、POSCTL 30.0 s 且高度跨度 0.013 m）
+    ⇒ 「可录制的画面」已经存在，缺的是录制与编码链路。
+  - 第 10 点：✅ 已达标（DSH-116c，2026-10-15 17:20 PDT，RESULT: COMPLETED）。以
+    /gazebo/model_states 真值为准：四向各真实移动 0.59~0.67 m（+0.650 / −0.650 /
+    +0.592 / −0.665 m），松手后 6 s 内真值漂移 ≤ 0.22 m；上升/下降真值 +0.442 m /
+    −0.783 m，保持段漂移 < 0.10 m。（此前 DSH-110 记录的 42.499 m 是 EKF 估计量，
+    与真值核对后判定为估计发散，不是真实漂移。）
+
+说明（录制环境实测，DSH111_x_probe.txt）：
+  - 客机 X 显示正常：2358x1282x24，xwd 可取整屏单帧（12095003 B）。
+  - 客机 ffmpeg / ffprobe / convert / import / xdotool / wmctrl / scrot 均未安装，
+    可用工具仅 xwd + Python PIL 7.0.0 ⇒ 只能在客机外合成视频。
+  - 宿主机同样未安装 ffmpeg / ffprobe / magick。
+  - DSH-111b 曾抓到 220 张 PNG 全屏帧（DSH111b_frame_capture.tar，1198080 B），
+    但未合成视频；抓帧子进程日志 /tmp/dsh111_capture.txt 未生成，帧编号不连续。
+
+验证飞行的全部数据证据（rosbag、飞行 CSV、状态文件、真值对照）已经具备，
+见 07_Test_Result/Day3/ 下的 DSH108_* / DSH109_* / DSH110_* / DSH111_* / DSH111b_*。
+详见 00_Project_Documents/DSH-111.md 第 6 节「未完成的原因与可选路线」。
+
+────────────────────────────────────────────
+交付记录（2026-10-16，已完成）：
+
+  已产出文件（均在 视频/ 下）：
+    - demo.mp4    主交付物（H.264 / yuv420p / 4 fps / 720×440 / 约 115 秒 = 1 分 55 秒）
+    - demo.webp   同内容动画图（约 3.3 MB，备用）
+    - demo.gif    同内容动图（约 3.7 MB，兜底）
+
+  内容：DSH-116c 飞行日志数据回放动画（数据源 07_Test_Result/Day3/DSH116c_move.csv）
+    - 左侧 XY 俯视轨迹对比：Gazebo 真值（绿）/ EKF（蓝）/ VINS（橙）
+    - 右上高度-时间曲线（含 1.0–1.5 m 任务目标阴影带）
+    - 右中相位时间轴
+    - 右下实时状态（t / 相位 / mode / armed / EKF dz 与 dxy / 真值 dz 与水平位移 /
+      VINS dz / RC 四通道 / 速度）
+  生成脚本：07_Test_Result/Day3/DSH119_make_replay.py（仓库内副本 脚本/make_replay.py）
+  复现命令：python make_replay.py DSH116c_move.csv -o demo --frames 460 --fps 4 --pngdir frames
+            ffmpeg -framerate 4 -i frames/f%05d.png -c:v libx264 -crf 20 -pix_fmt yuv420p demo.mp4
+
+  如实说明：以上是飞行日志数据回放动画，不是屏幕录制。
+    曾尝试屏幕录制（客机 xwd 抓 RViz 窗口，300 帧 500×390），但 RViz 3D 视图默认相机
+    过近、画面中看不到轨迹，故改用数据回放动画；静态 RViz 截图仍见 图片/vins_rviz.png。
+    视频只是旁证，所有判据一律以 /gazebo/model_states 真值为准。
+  完整报告：00_Project_Documents/DSH-114.md（测试 3/4 报告，29840 B）
+
+视频链接：无（视频已随仓库以本地文件提交：视频/demo.mp4 / demo.webp / demo.gif）；
+          若因仓库大小限制需改为外链，请在此填写：⬜ 待填写

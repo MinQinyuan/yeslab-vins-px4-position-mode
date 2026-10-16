@@ -1,0 +1,1353 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://asphalt_plane</uri>
+    </include>
+    <physics name='default_physics' default='0' type='ode'>
+      <gravity>0 0 -9.8066</gravity>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>10</iters>
+          <sor>1.3</sor>
+          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+      <magnetic_field>6.0e-6 2.3e-5 -4.2e-5</magnetic_field>
+    </physics>
+      <model name='wallA_00'>
+      <static>true</static>
+      <pose>4.200 0.400 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_01'>
+      <static>true</static>
+      <pose>4.200 0.800 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_02'>
+      <static>true</static>
+      <pose>4.200 1.200 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_03'>
+      <static>true</static>
+      <pose>4.200 1.600 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_10'>
+      <static>true</static>
+      <pose>4.200 0.400 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_11'>
+      <static>true</static>
+      <pose>4.200 0.800 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_12'>
+      <static>true</static>
+      <pose>4.200 1.200 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_13'>
+      <static>true</static>
+      <pose>4.200 1.600 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_20'>
+      <static>true</static>
+      <pose>4.200 0.400 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_21'>
+      <static>true</static>
+      <pose>4.200 0.800 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_22'>
+      <static>true</static>
+      <pose>4.200 1.200 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_23'>
+      <static>true</static>
+      <pose>4.200 1.600 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_30'>
+      <static>true</static>
+      <pose>4.200 0.400 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_31'>
+      <static>true</static>
+      <pose>4.200 0.800 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_32'>
+      <static>true</static>
+      <pose>4.200 1.200 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallA_33'>
+      <static>true</static>
+      <pose>4.200 1.600 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_00'>
+      <static>true</static>
+      <pose>-2.200 0.400 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_01'>
+      <static>true</static>
+      <pose>-2.200 0.800 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_02'>
+      <static>true</static>
+      <pose>-2.200 1.200 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_03'>
+      <static>true</static>
+      <pose>-2.200 1.600 0.400 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_10'>
+      <static>true</static>
+      <pose>-2.200 0.400 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_11'>
+      <static>true</static>
+      <pose>-2.200 0.800 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_12'>
+      <static>true</static>
+      <pose>-2.200 1.200 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_13'>
+      <static>true</static>
+      <pose>-2.200 1.600 0.800 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_20'>
+      <static>true</static>
+      <pose>-2.200 0.400 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_21'>
+      <static>true</static>
+      <pose>-2.200 0.800 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_22'>
+      <static>true</static>
+      <pose>-2.200 1.200 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_23'>
+      <static>true</static>
+      <pose>-2.200 1.600 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_30'>
+      <static>true</static>
+      <pose>-2.200 0.400 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_31'>
+      <static>true</static>
+      <pose>-2.200 0.800 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_32'>
+      <static>true</static>
+      <pose>-2.200 1.200 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='wallB_33'>
+      <static>true</static>
+      <pose>-2.200 1.600 1.600 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.060 0.400 0.400</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_0_lo'>
+      <static>true</static>
+      <pose>3.511 1.673 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_0_hi'>
+      <static>true</static>
+      <pose>3.511 1.673 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_1_lo'>
+      <static>true</static>
+      <pose>2.838 2.838 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_1_hi'>
+      <static>true</static>
+      <pose>2.838 2.838 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_2_lo'>
+      <static>true</static>
+      <pose>1.673 3.511 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_2_hi'>
+      <static>true</static>
+      <pose>1.673 3.511 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_3_lo'>
+      <static>true</static>
+      <pose>0.327 3.511 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_3_hi'>
+      <static>true</static>
+      <pose>0.327 3.511 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_4_lo'>
+      <static>true</static>
+      <pose>-0.838 2.838 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_4_hi'>
+      <static>true</static>
+      <pose>-0.838 2.838 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_5_lo'>
+      <static>true</static>
+      <pose>-1.511 1.673 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_5_hi'>
+      <static>true</static>
+      <pose>-1.511 1.673 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_6_lo'>
+      <static>true</static>
+      <pose>-1.511 0.327 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_6_hi'>
+      <static>true</static>
+      <pose>-1.511 0.327 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_7_lo'>
+      <static>true</static>
+      <pose>-0.838 -0.838 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_7_hi'>
+      <static>true</static>
+      <pose>-0.838 -0.838 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_8_lo'>
+      <static>true</static>
+      <pose>0.327 -1.511 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_8_hi'>
+      <static>true</static>
+      <pose>0.327 -1.511 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_9_lo'>
+      <static>true</static>
+      <pose>1.673 -1.511 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_9_hi'>
+      <static>true</static>
+      <pose>1.673 -1.511 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_10_lo'>
+      <static>true</static>
+      <pose>2.838 -0.838 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_10_hi'>
+      <static>true</static>
+      <pose>2.838 -0.838 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_11_lo'>
+      <static>true</static>
+      <pose>3.511 0.327 0.375 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r1_11_hi'>
+      <static>true</static>
+      <pose>3.511 0.327 1.125 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.280 0.280 0.750</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_0_lo'>
+      <static>true</static>
+      <pose>5.600 1.000 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_0_hi'>
+      <static>true</static>
+      <pose>5.600 1.000 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_1_lo'>
+      <static>true</static>
+      <pose>4.984 3.300 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_1_hi'>
+      <static>true</static>
+      <pose>4.984 3.300 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_2_lo'>
+      <static>true</static>
+      <pose>3.300 4.984 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_2_hi'>
+      <static>true</static>
+      <pose>3.300 4.984 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_3_lo'>
+      <static>true</static>
+      <pose>1.000 5.600 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_3_hi'>
+      <static>true</static>
+      <pose>1.000 5.600 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_4_lo'>
+      <static>true</static>
+      <pose>-1.300 4.984 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_4_hi'>
+      <static>true</static>
+      <pose>-1.300 4.984 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_5_lo'>
+      <static>true</static>
+      <pose>-2.984 3.300 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_5_hi'>
+      <static>true</static>
+      <pose>-2.984 3.300 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_6_lo'>
+      <static>true</static>
+      <pose>-3.600 1.000 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_6_hi'>
+      <static>true</static>
+      <pose>-3.600 1.000 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_7_lo'>
+      <static>true</static>
+      <pose>-2.984 -1.300 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_7_hi'>
+      <static>true</static>
+      <pose>-2.984 -1.300 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_8_lo'>
+      <static>true</static>
+      <pose>-1.300 -2.984 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_8_hi'>
+      <static>true</static>
+      <pose>-1.300 -2.984 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_9_lo'>
+      <static>true</static>
+      <pose>1.000 -3.600 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_9_hi'>
+      <static>true</static>
+      <pose>1.000 -3.600 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_10_lo'>
+      <static>true</static>
+      <pose>3.300 -2.984 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_10_hi'>
+      <static>true</static>
+      <pose>3.300 -2.984 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_11_lo'>
+      <static>true</static>
+      <pose>4.984 -1.300 0.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r2_11_hi'>
+      <static>true</static>
+      <pose>4.984 -1.300 1.500 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.450 0.450 1.000</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_0'>
+      <static>true</static>
+      <pose>7.467 3.679 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_1'>
+      <static>true</static>
+      <pose>3.679 7.467 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_2'>
+      <static>true</static>
+      <pose>-1.679 7.467 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_3'>
+      <static>true</static>
+      <pose>-5.467 3.679 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_4'>
+      <static>true</static>
+      <pose>-5.467 -1.679 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_5'>
+      <static>true</static>
+      <pose>-1.679 -5.467 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_6'>
+      <static>true</static>
+      <pose>3.679 -5.467 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='r3_7'>
+      <static>true</static>
+      <pose>7.467 -1.679 1.100 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.800 0.800 2.200</size></box></geometry>
+        <material>
+          <ambient>0.93 0.93 0.93 1</ambient>
+          <diffuse>0.93 0.93 0.93 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='pole_0'>
+      <static>true</static>
+      <pose>3.944 2.700 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.070</radius><length>2.400</length></cylinder></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='pole_1'>
+      <static>true</static>
+      <pose>1.000 4.400 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.070</radius><length>2.400</length></cylinder></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='pole_2'>
+      <static>true</static>
+      <pose>-1.944 2.700 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.070</radius><length>2.400</length></cylinder></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='pole_3'>
+      <static>true</static>
+      <pose>-1.944 -0.700 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.070</radius><length>2.400</length></cylinder></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='pole_4'>
+      <static>true</static>
+      <pose>1.000 -2.400 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.070</radius><length>2.400</length></cylinder></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+    <model name='pole_5'>
+      <static>true</static>
+      <pose>3.944 -0.700 1.200 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.070</radius><length>2.400</length></cylinder></geometry>
+        <material>
+          <ambient>0.04 0.04 0.04 1</ambient>
+          <diffuse>0.04 0.04 0.04 1</diffuse>
+          <specular>0.15 0.15 0.15 1</specular>
+        </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
